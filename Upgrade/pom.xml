@@ -1,0 +1,168 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.upgrade</groupId>
+  <artifactId>Upgrade</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <name>Upgrade</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+
+            <!-- Jersey-client -->
+            <dependency>
+                  <groupId>org.glassfish.jersey.core</groupId>
+                  <artifactId>jersey-client</artifactId>
+                  <version>2.10</version>
+            </dependency>
+
+
+            <!-- jersey-container-servlet-core -->
+            <dependency>
+                  <groupId>org.glassfish.jersey.containers</groupId>
+                  <artifactId>jersey-container-servlet-core</artifactId>
+                  <version>2.10</version>
+            </dependency>
+
+            <!-- jersey-container-servlet-core -->
+         <!--    <dependency>
+                  <groupId>org.glassfish.jersey.containers</groupId>
+                  <artifactId>jersey-container-servlet-core</artifactId>
+                  <version>2.10</version>
+            </dependency> -->
+
+
+            <!-- Spring framework -->
+            <dependency>
+                  <groupId>org.springframework</groupId>
+                  <artifactId>spring</artifactId>
+                  <version>2.5.6</version>
+            </dependency>
+ <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-web</artifactId>
+    <version>4.1.6.RELEASE</version>
+</dependency>
+<dependency>
+    <groupId>commons-collections</groupId>
+    <artifactId>commons-collections</artifactId>
+    <version>3.2.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.15</version>
+</dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
+<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+<dependency>
+    <groupId>commons-dbcp</groupId>
+    <artifactId>commons-dbcp</artifactId>
+    <version>1.2.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.7.25</version>
+</dependency>
+
+  <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-json-jackson -->
+<dependency>
+    <groupId>org.glassfish.jersey.media</groupId>
+    <artifactId>jersey-media-json-jackson</artifactId>
+    <version>2.26</version>
+</dependency>
+            <!-- Hibernate Core -->
+            <dependency>
+                  <groupId>org.hibernate</groupId>
+                  <artifactId>hibernate-core</artifactId>
+                  <version>3.3.2.GA</version>
+            </dependency>
+
+            <!-- Hibernate JPA -->
+            <dependency>
+                  <groupId>org.hibernate.javax.persistence</groupId>
+                  <artifactId>hibernate-jpa-2.0-api</artifactId>
+                  <version>1.0.1.Final</version>
+            </dependency>
+
+            <!-- Hibernate Annotations -->
+            <dependency>
+                  <groupId>org.hibernate</groupId>
+                  <artifactId>hibernate-annotations</artifactId>
+                  <version>3.3.1.GA</version>
+            </dependency>
+
+            <!-- Modelmapper -->
+            <dependency>
+                  <groupId>org.modelmapper</groupId>
+                  <artifactId>modelmapper</artifactId>
+                  <version>0.7.4</version>
+            </dependency>
+
+            <!-- Log4j -->
+            <dependency>
+                  <groupId>log4j</groupId>
+                  <artifactId>log4j</artifactId>
+                  <version>1.2.16</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.swagger/swagger-core -->
+            <dependency>
+                  <groupId>io.swagger</groupId>
+                  <artifactId>swagger-core</artifactId>
+                  <version>1.5.13</version>
+            </dependency>
+
+            <dependency>
+                  <groupId>io.swagger</groupId>
+                  <artifactId>swagger-jersey-jaxrs</artifactId>
+                  <version>1.5.13</version>
+            </dependency>
+
+
+      </dependencies>
+      <build>
+            <sourceDirectory>src</sourceDirectory>
+            <resources>
+                  <resource>
+                        <directory>src</directory>
+                        <excludes>
+                              <exclude>**/*.java</exclude>
+                        </excludes>
+                  </resource>
+            </resources>
+            <plugins>
+                  <plugin>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.3</version>
+                        <configuration>
+                              <source>1.7</source>
+                              <target>1.7</target>
+                             
+                        </configuration>
+                  </plugin>
+                  <plugin>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>2.6</version>
+                        <configuration>
+                              <warSourceDirectory>WebContent</warSourceDirectory>
+                              <failOnMissingWebXml>false</failOnMissingWebXml>
+                              <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+                        </configuration>
+                  </plugin>
+            </plugins>
+      </build>
+</project>
